@@ -8,13 +8,9 @@ jobs:
   add-to-project:
     runs-on: ubuntu-latest
     steps:
-    - name: Add Issue to Project Column
-      uses: alex-page/github-project-automation-plus@v0.8.1
-      with:
-        project: 'Monlam AI Public Roadmap'
-        column: 'No Status'
-        repo-token: ${{ secrets.GH_PROJECT_TOKEN }}
-        # For organization projects, use the following line instead and comment out the repo-token line
-        # org-token: ${{ secrets.ORG_ACCESS_TOKEN }}
-        # Replace 'owner/repo' with your repository's path for repository projects
-        repository: 'OpenPecha/monlamai-feedbucket'
+      - name: Add new issues to project column 'No Status'
+        uses: actions/add-to-project@v0.5.0
+        with:
+          project-url: https://github.com/orgs/OpenPecha/projects/Monlam AI Public Roadmap
+          github-token: ${{ secrets.GH_PROJECT_TOKEN }}
+          column-name: No Status
