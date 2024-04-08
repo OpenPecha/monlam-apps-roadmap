@@ -1,15 +1,20 @@
-name: Issue to Project
+name: Add New Issue to Project Column
+
 on:
   issues:
-    types: [opened, labeled]
+    types: [opened]
 
 jobs:
-  auto-card:
+  add-to-project:
     runs-on: ubuntu-latest
     steps:
-    - name: Add to Project
+    - name: Add Issue to Project Column
       uses: alex-page/github-project-automation-plus@v0.8.1
       with:
         project: 'Monlam AI Public Roadmap'
         column: 'No Status'
-        repo-token: '${{ secrets.GH_PROJECT_TOKEN }}'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        # For organization projects, use the following line instead and comment out the repo-token line
+        # org-token: ${{ secrets.ORG_ACCESS_TOKEN }}
+        # Replace 'owner/repo' with your repository's path for repository projects
+        repository: 'owner/repo'
