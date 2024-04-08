@@ -13,7 +13,7 @@ jobs:
          id: addItem
          with:
            project-url: https://github.com/orgs/OpenPecha/projects/58
-           github-token: ${{ secrets.ADD_TO_PROJECT_PAT }}
+           github-token: ${{ secrets.GH_PROJECT_TOKEN }}
            labeled: bug
            label-operator: OR
            
