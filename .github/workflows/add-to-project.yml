@@ -13,7 +13,7 @@ jobs:
       with:
         project: 'Monlam AI Public Roadmap'
         column: 'No Status'
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.GH_PROJECT_TOKEN }}
         # For organization projects, use the following line instead and comment out the repo-token line
         # org-token: ${{ secrets.ORG_ACCESS_TOKEN }}
         # Replace 'owner/repo' with your repository's path for repository projects
