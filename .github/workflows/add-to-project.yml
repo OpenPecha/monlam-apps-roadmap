@@ -11,6 +11,6 @@ jobs:
     - name: Add to Project
       uses: alex-page/github-project-automation-plus@v0.8.1
       with:
-        project: '58'
-        column: 'Feedback'
+        project: 58
+        column: Feedback
         repo-token: '${{ secrets.GH_PROJECT_TOKEN }}'
