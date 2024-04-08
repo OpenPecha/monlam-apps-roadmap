@@ -1,0 +1,15 @@
+name: Issue to Project
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  auto-card:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Add to Project
+      uses: alex-page/github-project-automation-plus@v0.8.1
+      with:
+        project: '58'
+        column: 'No Status'
+        repo-token: '${{ secrets.GH_PROJECT_TOKEN }}'
