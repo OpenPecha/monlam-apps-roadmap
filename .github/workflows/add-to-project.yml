@@ -2,7 +2,7 @@ name: Add New Issue to Project Column
 
 on:
   issues:
-    types: [opened]
+    types: [opened, labeled]
 
 jobs:
   add-to-project:
