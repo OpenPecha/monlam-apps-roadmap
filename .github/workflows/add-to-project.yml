@@ -1,25 +1,16 @@
-name: Add New Issue to Project
 
+name: Issue to Project
 on:
   issues:
     types: [opened, labeled]
 
 jobs:
-  add-to-project:
-    name: Add issue to project
+  auto-card:
     runs-on: ubuntu-latest
     steps:
-       - uses: actions/add-to-project@main
-         id: addItem
-         with:
-           project-url: https://github.com/orgs/OpenPecha/projects/58
-           github-token: ${{ secrets.GH_PROJECT_TOKEN }}
-           labeled: bug
-           label-operator: OR
-           
-       - uses: kalgurn/update-project-item-status@main
-         with:
-           project-url: https://github.com/orgs/OpenPecha/projects/58
-           github-token: ${{ secrets.GH_PROJECT_TOKEN }}
-           item-id: ${{ steps.addItem.outputs.itemId }}
-           status: "Feedback"
+    - name: Add to Project
+      uses: alex-page/github-project-automation-plus@v0.8.1
+      with:
+        project: '58'
+        column: 'Feedback'
+        repo-token: '${{ secrets.GH_PROJECT_TOKEN }}'
