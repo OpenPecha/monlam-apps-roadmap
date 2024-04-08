@@ -11,6 +11,6 @@ jobs:
       - name: Add new issues to project column 'No Status'
         uses: actions/add-to-project@v0.5.0
         with:
-          project-url: https://github.com/orgs/OpenPecha/projects/Monlam AI Public Roadmap
+          project-url: https://github.com/orgs/OpenPecha/projects/58
           github-token: ${{ secrets.GH_PROJECT_TOKEN }}
           column-name: No Status
