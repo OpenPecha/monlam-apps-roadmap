@@ -5,12 +5,14 @@ on:
     types: [opened, labeled]
 
 jobs:
-  auto-card:
+  add-to-project:
+    name: Add issue to project
     runs-on: ubuntu-latest
     steps:
-    - name: Add to Project
-      uses: alex-page/github-project-automation-plus@v0.8.1
-      with:
-        project: 58
-        column: Feedback
-        repo-token: '${{ secrets.GH_PROJECT_TOKEN }}'
+      - uses: actions/add-to-project@main
+        id: addItem
+        with:
+          project-url: https://github.com/orgs/OpenPecha/projects/58
+          github-token: ${{ secrets.GH_PROJECT_TOKEN }}
+          labeled: bug, feedbucket
+          label-operator: OR
