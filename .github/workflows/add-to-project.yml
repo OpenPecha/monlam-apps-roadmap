@@ -16,3 +16,9 @@ jobs:
           github-token: ${{ secrets.GH_PROJECT_TOKEN }}
           labeled: bug, feedbucket
           label-operator: OR
+      - uses: kalgurn/update-project-item-status@main
+        with:
+          project-url: https://github.com/orgs/OpenPecha/projects/58
+          github-token: ${{ secrets.GH_PROJECT_TOKEN }}
+          item-id: ${{ steps.addItem.outputs.itemId }}
+          status: "feedbucket"
