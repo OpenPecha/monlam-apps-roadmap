@@ -12,7 +12,7 @@ jobs:
       - uses: actions/add-to-project@main
         id: addItem
         with:
-          project-url: https://github.com/orgs/OpenPecha/projects/65
+          project-url: https://github.com/orgs/OpenPecha/projects/58
           github-token: ${{ secrets.GH_PROJECT_TOKEN }}
           labeled: bug, Feedback
           label-operator: OR
